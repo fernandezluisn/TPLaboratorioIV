@@ -13,7 +13,7 @@ export class MapaDeGoogleComponent implements OnInit {
    zoom: number = 8;
    
 
-
+   mapClicked:any;
 
   constructor() { }
   
