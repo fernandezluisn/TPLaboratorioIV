@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    background-color: darkturquoise;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+a:hover {
+    background-color: rgb(255, 162, 41);
+    color: white;
+    border-radius: 2rem;
+    }
+
+div{
+    
+    
+    font-size: 1.3rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    
+    
+}
+
