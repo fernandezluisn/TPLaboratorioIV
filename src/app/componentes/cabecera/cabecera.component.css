@@ -30,6 +30,14 @@ text-align: center;
 
 }
 
+a{
+    color: black;
+    position: relative; 
+    margin: 1.5rem;
+    font-size: 2rem;
+    background-color: darkgray;
+    border-radius: 0.6rem;
+}
 a:hover{
     color: white;
     background-color: rgb(129, 148, 20);
