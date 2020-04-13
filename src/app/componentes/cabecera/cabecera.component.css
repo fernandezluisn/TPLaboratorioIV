@@ -30,6 +30,11 @@ text-align: center;
 
 }
 
+a:hover{
+    color: white;
+    background-color: rgb(129, 148, 20);
+}
+
 .hero-text a:hover {
 background-color: rgb(129, 148, 20);
 color: white;
