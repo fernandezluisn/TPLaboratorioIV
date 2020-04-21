@@ -3,25 +3,41 @@ input[type=text], input[type=password] {
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid #ccc;
+    border: 1px solid rgb(10, 1, 1);
     box-sizing: border-box;
+}
+
+body
+{
+    width: 100%;
+    height: 110%;
+    background-color: rgb(223, 219, 167);
+    
+}
+p{
+    font-family: sans-serif;
+    margin-left: 1rem;
 }
 
 /* Set a style for all buttons */
 button {
-    background-color: #4CAF50;
+    background-color: rgb(86, 76, 175);
     color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
+    padding: 1.4rem 2rem;
+    margin-left: 4rem;
+    margin-right: 4rem;
+    margin-top: 1rem;
+    border: solid 0.2rem black;
     cursor: pointer;
-    width: 100%;
+    width: 15rem;
+    border-radius: 1rem;
 }
 
 /* Extra styles for the cancel button */
 .cancelbtn {
-    padding: 14px 20px;
-    background-color: #f44336;
+    padding: 1.4rem 2rem;
+    background-color: #f43636;
+    width: 50%;
 }
 
 /* Float cancel and signup buttons and add an equal width */
@@ -29,7 +45,7 @@ button {
 
 /* Add padding to container elements */
 .container {
-    padding: 16px;
+    padding: 3rem;
 }
 
 /* The Modal (background) */
@@ -60,14 +76,14 @@ button {
     position: absolute;
     right: 35px;
     top: 15px;
-    color: #000;
+    color: rgb(49, 36, 36);
     font-size: 40px;
     font-weight: bold;
 }
 
 .close:hover,
 .close:focus {
-    color: red;
+    color: rgb(255, 0, 191);
     cursor: pointer;
 }
 
@@ -83,4 +99,7 @@ button {
     .cancelbtn, .signupbtn {
        width: 100%;
     }
+}
+h2{
+    margin: 3rem;
 }

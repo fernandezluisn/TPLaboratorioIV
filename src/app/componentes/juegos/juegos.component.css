@@ -1,7 +1,11 @@
 div{
     border: solid black 0.3rem;
     border-radius: 0.2rem;
+    height: 5rem;
 }
 body{
     background-color: coral;
+}
+p{
+    font-family: sans-serif;
 }

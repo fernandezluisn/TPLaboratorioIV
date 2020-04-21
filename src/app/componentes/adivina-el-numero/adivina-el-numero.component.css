@@ -1,8 +1,9 @@
 
 form {
-    border: 10px solid #f1f1f1;
+    border: 10px solid #070707;
     padding: 10px;
-    background:gray;
+    background:rgb(238, 186, 90);
+    height: 30.76rem;
 }
 
 input[type=text], input[type=password] {
@@ -16,12 +17,13 @@ input[type=text], input[type=password] {
 
 button {
     /*background-color: #4CAF50;*/
-    color: white;
+    color: rgb(5, 2, 2);
     padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
+    margin-left: 20%;
+    margin-right: 20%;
+    border: black solid 0.3rem;
     cursor: pointer;
-    width: 100%;
+    width: 60%;
 }
 
 button:hover {
@@ -31,12 +33,12 @@ button:hover {
 .cancelbtn {
     width: auto;
     padding: 10px 18px;
-    background-color: #f44336;
+    background-color: #dfaeaa;
 }
 .aceptbtn {
     width: auto;
     padding: 10px 18px;
-    background-color: #3664F4;
+    background-color: rgb(54, 244, 63);
 }
 .imgcontainer {
     text-align: center;
@@ -70,12 +72,13 @@ span.psw {
 
 
 
+
 #snackbar {
     visibility: hidden;
     min-width: 250px;
     margin-left: -125px;
-   
-    color: #fff;
+   background-color: orange;
+   color: papayawhip;
     text-align: center;
     border-radius: 2px;
     padding: 16px;
@@ -86,17 +89,19 @@ span.psw {
     font-size: 17px;
 }
 #snackbar.Ganador {
-    background-color: #059F2F;
+    background-color: rgb(20, 5, 159);
 }
 #snackbar.Perdedor {
-    background-color: #FF0000;
+    background-color: rgb(15, 14, 0);
 }
 #snackbar.show {
     visibility: visible;
     -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
     animation: fadein 0.5s, fadeout 0.5s 2.5s;
 }
-
+p{
+    font-family: sans-serif;
+}
 @-webkit-keyframes fadein {
     from {bottom: 0; opacity: 0;} 
     to {bottom: 30px; opacity: 1;}

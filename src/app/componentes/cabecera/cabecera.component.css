@@ -21,7 +21,6 @@ color: rgba(14, 4, 27, 0.89);
 
 .hero-text a {
 border: none;
-outline: 0;
 
 padding: 1rem 2.5rem;
 color: black;
@@ -29,7 +28,9 @@ background-color: rgb(223, 215, 215);
 text-align: center;
 
 }
-
+p{
+    font-family: sans-serif;
+}
 a{
     color: black;
     position: relative; 
