@@ -2,7 +2,7 @@
 {
     height: 20rem;
     background-image: url("/TP_LAV4_2017/assets/imagenes/cabecera.png");
-    background-color: rgb(230, 165, 221);
+    
     background-position: right;
     background-repeat: no-repeat;
     background-size: cover;
@@ -24,7 +24,7 @@ border: none;
 
 padding: 1rem 2.5rem;
 color: black;
-background-color: rgb(223, 215, 215);
+
 text-align: center;
 
 }

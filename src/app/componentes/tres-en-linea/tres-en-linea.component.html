@@ -15,10 +15,10 @@
     <button style="margin-top: 2rem;" mat-button color="primary" (click)="reiniciar()">Reiniciar</button>
   </div>
 
-  <div name="divO" >
-        Ganó O
+  <div style="text-align: center;" [hidden]="!ganoO" >
+       <h1>Ganó O</h1> 
   </div>
 
-  <div name="divX">
-    Ganó X
+  <div style="text-align: center;" [hidden]="!ganoX">
+   <h1>Ganó X</h1> 
 </div>

@@ -1,1 +1,42 @@
-<p>ppt works!</p>
+<div class="container" >
+    <div style="text-align:center"><h1>Elija su objeto:</h1></div>
+    <div class="card">
+      <img class="img-thumbnail"   src="./assets/imagenes/piedra.jpg" alt="Avatar" style="width:100%">
+      
+      
+  
+     
+      <p>           <button class="button" (click)="jugar('piedra')">Piedra</button></p>
+    
+    </div>
+  
+    <div class="card">
+      <img class="img-thumbnail" src="./assets/imagenes/papel.jpg" alt="Avatar" style="width:100%">
+      
+      <p>           <button class="button" (click)="jugar('papel')">Papel</button></p>
+    </div>
+    
+    <div class="card">
+      <img  class="img-thumbnail"  src="./assets/imagenes/tijera.jpg" alt="Avatar" style="width:100%">
+      
+      <p>           <button class="button" (click)="jugar('tijera')">Tijera</button></p>
+    </div>  
+    
+    <div [hidden]="eligio" class="container" style=" margin-top: 7rem; display:flex; justify-content:center;">
+        <div style="text-align:center"><h1>El rival eligió</h1></div><br><br>
+        <div class="card" style="background-color: red;">
+            <img  class="img-thumbnail"  src="{{rutaDeFoto}}" alt="Avatar" style="width:100%">
+            
+            <label style="font: bolder; font-size: 3rem; color: black;">{{this.nuevoJuego.elegidoMaquina}}</label>
+          </div>  
+      </div>
+  </div><br><br>
+  <div [hidden]="eligio"  style="text-shadow: white 0.2rem 0.2rem; text-align:center;"><h1 >{{resultado}}</h1></div>
+  <br>
+  <br>
+  <br>
+  
+
+
+
+  
