@@ -5,15 +5,24 @@
 }
 
 .mat-button{
-    height: 3rem;
-    width: 20rem;
+    height: 6rem;
+    width: 30rem;
     font-size: 4rem;
-    background-color: black;
+    background-color: rgb(231, 31, 31);
     border-radius: 3rem;
     color: blanchedalmond;
 }
 
+button:hover {
+    background-color: rgb(47, 3, 243);
+    color: white;
+    border-radius: 2rem;
+    }
+
 .fond{
-    height: 11.45rem;
+    height: 50rem;
 }
 
+h1{
+    font-size: 15rem;
+}

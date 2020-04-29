@@ -1,3 +1,34 @@
-p{
-    font-family: sans-serif;
+
+
+button:hover {
+    background-color: rgb(47, 3, 243);
+    color: white;
+    border-radius: 2rem;
+    }
+
+    
+button {
+    background-color: black;
+    color: white;
+    border-radius: 2rem;
+    margin: 1rem;
+    }
+
+.fond{
+    height: 50rem;
+}
+
+h1{
+    font-size: 15rem;
+}
+
+.puntaje{
+    margin-top: 2rem;
+    border: 0.5rem black solid;
+    background-color: rgb(245, 242, 239);
+    color: black;
+    border-radius: 2rem;
+    
+    width: 30%;
+    margin-left: 35%;
 }

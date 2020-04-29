@@ -1,24 +1,26 @@
-<div class="fond" style="text-align: center; margin-top: 2rem;">
-    <button mat-raised-button (click)="presion(0,0)" class="casilla">{{posiciones[0][0]}}</button>
-    <button mat-raised-button (click)="presion(0,1)" class="casilla">{{posiciones[0][1]}}</button>
-    <button mat-raised-button (click)="presion(0,2)" class="casilla">{{posiciones[0][2]}}</button>
+<div  class="fond" style="text-align: center; margin-top: 2rem;">
+    <button mat-raised-button [disabled]="ganador"  (click)="presion(0,0)" class="casilla">{{posiciones[0][0]}}</button>
+    <button mat-raised-button [disabled]="ganador"  (click)="presion(0,1)" class="casilla">{{posiciones[0][1]}}</button>
+    <button mat-raised-button [disabled]="ganador"  (click)="presion(0,2)" class="casilla">{{posiciones[0][2]}}</button>
     <br>
-    <button mat-raised-button (click)="presion(1,0)" class="casilla">{{posiciones[1][0]}}</button>
-    <button mat-raised-button (click)="presion(1,1)" class="casilla">{{posiciones[1][1]}}</button>
-    <button mat-raised-button (click)="presion(1,2)" class="casilla">{{posiciones[1][2]}}</button>
+    <button mat-raised-button [disabled]="ganador"  (click)="presion(1,0)" class="casilla">{{posiciones[1][0]}}</button>
+    <button mat-raised-button [disabled]="ganador"  (click)="presion(1,1)" class="casilla">{{posiciones[1][1]}}</button>
+    <button mat-raised-button [disabled]="ganador"  (click)="presion(1,2)" class="casilla">{{posiciones[1][2]}}</button>
     <br>
-    <button mat-raised-button (click)="presion(2,0)" class="casilla">{{posiciones[2][0]}}</button>
-    <button mat-raised-button (click)="presion(2,1)" class="casilla">{{posiciones[2][1]}}</button>
-    <button mat-raised-button (click)="presion(2,2)" class="casilla">{{posiciones[2][2]}}</button>
+    <button mat-raised-button [disabled]="ganador"  (click)="presion(2,0)" class="casilla">{{posiciones[2][0]}}</button>
+    <button mat-raised-button [disabled]="ganador"  (click)="presion(2,1)" class="casilla">{{posiciones[2][1]}}</button>
+    <button mat-raised-button [disabled]="ganador"  (click)="presion(2,2)" class="casilla">{{posiciones[2][2]}}</button>
+  
+    <div style="text-align: center; margin-top: 4rem;">
+      <button  [hidden]="!ganador" mat-button color="primary" (click)="reiniciar()">Reiniciar</button>
+    </div>
+  
+    <div  style="text-align: center;margin-top: 8rem;"  >
+         <h1 [hidden]="!ganoO">Ganó O</h1>
+    </div>
+  
+    <div  style="text-align: center;margin-top: 8rem; " >
+     <h1 [hidden]="!ganoX">Ganó X</h1> 
+    </div>
   </div>
-  <div class="fond" style="text-align: center;margin-top: 5rem;">
-    <button style="margin-top: 2rem;" mat-button color="primary" (click)="reiniciar()">Reiniciar</button>
-  </div>
-
-  <div style="text-align: center;" [hidden]="!ganoO" >
-       <h1>Ganó O</h1> 
-  </div>
-
-  <div style="text-align: center;" [hidden]="!ganoX">
-   <h1>Ganó X</h1> 
-</div>
+  

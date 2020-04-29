@@ -9,6 +9,7 @@ export class TresEnLineaComponent implements OnInit {
 
   ganoO=false;
   ganoX=false;
+  ganador=false;
 
   constructor() { }
 
@@ -33,7 +34,7 @@ reiniciar() {
 for(let f=0;f<3;f++)
 for(let c=0;c<3;c++)
 this.posiciones[f][c]='-';
-
+  this.ganador=false;
   this.ganoO=false;
   this.ganoX=false;
 }
@@ -47,9 +48,14 @@ this.jugador='O';
 
 chequear(ficha:string){
   if (ficha=="X")
-  this.ganoX=true;
-  else
-  this.ganoO=true;
+  {
+    this.ganoX=true;
+    this.ganador=true;
+  }  
+  else{
+    this.ganoO=true;
+    this.ganador=true;
+  }  
 }
 verificarGano(ficha: string) {
 if (this.posiciones[0][0]==ficha && this.posiciones[0][1]==ficha && this.posiciones[0][2]==ficha)

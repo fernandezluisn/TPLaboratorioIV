@@ -3,37 +3,29 @@
 <!-- index.html -->
 
 
-<form name="juego">
-<ul>
-   <li>
-   Primer número: <input [(ngModel)]="nuevoJuego.numeroIngresado" placeholder="ingrese numero" name="numeroIngresado" type="text" class="form-control" style="width:50%" readonly/>
-  
-  </li>
-  <li>
-   Operador: <input [(ngModel)]="nuevoJuego.numeroIngresado" placeholder="ingrese numero" name="numeroIngresado" type="text" class="form-control" style="width:50%" readonly/>
-    
-  </li>
-  <li>
-   Segundo número: <input [(ngModel)]="nuevoJuego.numeroIngresado" placeholder="ingrese numero" name="numeroIngresado" type="text" class="form-control" style="width:50%" readonly/>
-    
-  </li>
-  <li>
-    Respuesta: <input [(ngModel)]="nuevoJuego.numeroIngresado" placeholder="ingrese numero" name="numeroIngresado" type="text" class="form-control" style="width:50%"/>
-     
-   </li>
-  <li>
-    <h2 [hidden]="ocultarVerificar" ><button (click)="verificar()" class="btn btn-success btn-lg">Verificar {{Tiempo}} </button></h2>
-  </li>
-  <li>
-    <h2 [hidden]="!ocultarVerificar"><button  (click)="NuevoJuego()"  class="btn btn-info btn-lg">Nuevo</button></h2>
-  </li>
-  <li>
-    <h2><p><i class="fa fa-spinner fa-spin"></i>Esperando numero...</p></h2>
+<form name="juego" style="margin-left: 3rem;">
 
-    <h3 [hidden]="!nuevoJuego.gano">usted adivino el número</h3>
-    <h3 [hidden]="nuevoJuego.gano">usted aún no gano </h3>
-  </li>
-</ul>
+   Primer número: <input placeholder="{{nuevoJuego.num1}}" type="text" class="form-control" style="width:50%" readonly/>
+  
+  
+   Operador: <input placeholder="{{nuevoJuego.operador}}" type="text" class="form-control" style="width:50%" readonly/>
+    
+  
+   Segundo número: <input placeholder="{{nuevoJuego.num2}}" type="text" class="form-control" style="width:50%" readonly/>
+    
+  
+    Respuesta: <input [(ngModel)]="this.nuevoJuego.numeroIngresado" placeholder="ingrese numero" name="numeroIngresado" type="text" class="form-control" style="width:50%"/>
+     
+  
+    <h2 [hidden]="ocultarVerificar" style="margin-top:2rem"><button (click)="verificar()" class="btn btn-success btn-lg">{{Tiempo}} segundos</button></h2>
+  
+    <h2 ><button  style="margin-top:2rem" (click)="NuevoJuego()" [disabled]="!ocultarVerificar" class="btn btn-info btn-lg">Nuevo Número</button></h2>
+  
+    
+
+    <h1 [hidden]="!nuevoJuego.gano">Usted acertó el número</h1>
+    <h1 [hidden]="!perdio">Usted perdió. La respuesta era {{nuevoJuego.resultado}}.</h1>
+  
 
 </form>
 <div>
