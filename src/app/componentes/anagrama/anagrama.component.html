@@ -1,13 +1,14 @@
 <div class="fond" style="text-align: center; margin-top: 2rem;">
 
-  <h1 style="margin-bottom: 4rem;">{{anagrama}}</h1>
+  <h1 style="margin: 6rem;">{{anagrama}}</h1>
 
-  <h2>Ingrese anagramas: </h2>
+  <h2>Ingrese respuesta: </h2>
   <input [disabled]="verTiempo" type="text" [(ngModel)]="respuesta">
   <div>
     <button [hidden]="verTiempo" type="button" style="margin-top: 4rem;" (click)="Ingresar(respuesta)">Ingresar</button>
-    <button  [hidden]="!verTiempo" (click)="reiniciar()">Reiniciar</button>
+    <button  (click)="reiniciar()">Nuevo Juego</button>
   </div>
   <h2 class="puntaje" [hidden]="verTiempo" >Tiempo Restante= {{Tiempo}} </h2>
-  <h2 class="puntaje" [hidden]="!verTiempo" >Se acabó el tiempo. Su puntaje es {{contadorPuntos}} puntos.</h2>
+  <h2 class="puntaje" [hidden]="ganador" >Ganó</h2>
+  <h2 class="puntaje" [hidden]="perdedor" >Falló. La respuesta era {{nuevoJuego.palabraSorteada}}</h2>
 </div>
