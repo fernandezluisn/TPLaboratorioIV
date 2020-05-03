@@ -4,7 +4,7 @@
     transition: 0.3s;
     border-radius: 6rem; /* 5px rounded corners */
     width: 40%;
-   height: 90%;
+   
     margin: 10px;
     padding-bottom: 10px;
     margin-left: 30%;
@@ -30,6 +30,7 @@ img {
 }/* Add some padding inside the card container */
 .container {
     padding: 2px 16px;
+    height: 52rem;
 }
 
 
@@ -70,13 +71,21 @@ button{
 }
   
   button:hover {
-    background-color: rgb(255, 162, 41);
+    background-color: white;
     color: rgb(0, 0, 0);
     border-radius: 4rem;
+    transform: translateY(0.5rem);
+    
   }
-  
-  button:active {
-    background-color: #3e4a8e;
-    box-shadow: 0 5px #666;
-    transform: translateY(4px);
+ 
+
+  .resultado{
+    position: fixed;
+    height: 52rem;
+    width:100%;
+    opacity:95%;
+    background-color: black;
+    justify-content: center;
+    color: red;
+    text-align: center;
   }

@@ -28,3 +28,7 @@ p{
     background: #55ACEE;
     color: white;
 }
+
+a:hover{
+cursor: pointer;
+}

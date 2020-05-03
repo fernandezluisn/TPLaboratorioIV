@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ServiceService } from '../../service.service';
+import { JuegoAnagrama } from '../../clases/juego-anagrama';
 
 
 @Component({
@@ -11,9 +13,17 @@ export class PrincipalComponent implements OnInit {
     isFirstOpen: true,
     isFirstDisabled: false
   };
-  constructor() {  }
+  servicio:ServiceService;
+  juego:JuegoAnagrama;
+
+  constructor() { 
+    this.servicio=new ServiceService();
+      
+   }
 
   ngOnInit() {
+    this.servicio.registrarJugador("admin@admin.com", "1234");
+    this.servicio.registrarJugador("Invitado", "");   
   }
 
  

@@ -3,6 +3,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 import {Subscription} from "rxjs";
 import {TimerObservable} from "rxjs/observable/TimerObservable";
+import { ServiceService } from '../../service.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -17,15 +18,17 @@ export class LoginComponent implements OnInit {
   progresoMensaje="esperando..."; 
   logeando=true;
   ProgresoDeAncho:string;
-
+  servicio:ServiceService;
   clase="progress-bar progress-bar-info progress-bar-striped ";
+  existe:boolean;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router) {
       this.progreso=0;
       this.ProgresoDeAncho="0%";
-
+      this.servicio=new ServiceService();
+      this.existe=true;
   }
 
   ngOnInit() {
@@ -36,7 +39,10 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['/Principal']);
     }
   }
-  MoverBarraDeProgreso() {
+  MoverBarraDeProgreso(user:string, clave:string) {
+    if(this.servicio.iniciarJugador(user, clave))
+    {
+      this.existe=true;
     
     this.logeando=false;
     this.clase="progress-bar progress-bar-danger progress-bar-striped active";
@@ -72,9 +78,15 @@ export class LoginComponent implements OnInit {
           console.log("final");
           this.subscription.unsubscribe();
           this.Entrar();
+          this.router.navigate(["/Juegos"]);
           break;
       }     
+      
+      this.servicio.iniciarJugador(user, clave);
     });
+  }else{
+this.existe=false;
+  }
     //this.logeando=true;
   }
 

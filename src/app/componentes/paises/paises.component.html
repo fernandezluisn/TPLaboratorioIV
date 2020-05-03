@@ -1,12 +1,21 @@
+<div [hidden]="resultado" class="resultado">
+    <h1 style="margin-top: 23rem;" [hidden]="ganarB">Ganaste!!</h1>
+    <h1 style="margin-top: 23rem;" [hidden]="perder">Perdiste!!</h1>
+    <h2 [hidden]="perder" style="margin-top: 2rem;">La respuesta era {{this.nuevoJuego.paisS.nombre}} </h2>
+    <button (click)="nuevo()" class="a" style="width: 15%; margin-right: 42.5%; margin-left: 42.5%; height: 6rem;">Nuevo Juego</button>
+    
+</div>
+
 <div class="container">
-    <div class="card">
-        <img class="img-thumbnail"   src="" alt="Avatar" style="width:100%">
+    <div  class="card">
+        <img class="img-thumbnail"   src="{{this.nuevoJuego.paisS.foto}}" alt="Avatar" style="width:100%">
     </div>
-    <h1 style="text-align: center;"> Pista:</h1>
+    <h2 style="text-align: center;"> Pista: {{this.nuevoJuego.paisS.pista}}</h2>
     <h2 style="text-align: center;"></h2>
 
-    <button class="a"></button>
-    <button class="b"></button>
-    <button class="c"></button>
-    <button class="d"></button>
+    <button (click)="ganar(string1)" class="a">{{string1}}</button>
+    <button (click)="ganar(string2)" class="b">{{string2}}</button>
+    <button (click)="ganar(string3)" class="c">{{string3}}</button>
+    <button (click)="ganar(string4)" class="d">{{string4}}</button>
 </div>
+

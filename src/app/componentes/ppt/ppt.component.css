@@ -3,7 +3,7 @@
     transition: 0.3s;
     border-radius: 6rem; /* 5px rounded corners */
     width: 20rem;
-   height: 90%;
+   height: 40%;
     margin: 10px;
     padding-bottom: 10px;
     float: left;
@@ -33,6 +33,7 @@ img {
 }/* Add some padding inside the card container */
 .container {
     padding: 2px 16px;
+    height:45rem;
 }
 
 

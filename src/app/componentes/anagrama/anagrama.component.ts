@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {JuegoAnagrama} from '../../clases/juego-anagrama';
+import { Jugador } from '../../clases/jugador';
+import { ServiceService } from '../../service.service';
 
 @Component({
   selector: 'app-anagrama',
@@ -16,10 +18,15 @@ export class AnagramaComponent implements OnInit {
   contadorPuntos: number;
   perdedor=true;
   ganador=true;
+  jugadorR:Jugador;
+  servicio:ServiceService;
+ 
 
   constructor() { 
     this.Tiempo=10;
     this.nuevoJuego = new JuegoAnagrama();
+    this.servicio=new ServiceService();
+    this.jugadorR=this.servicio.traerLogeado();
   }
 
   desarmarPalabra(){
@@ -33,6 +40,7 @@ export class AnagramaComponent implements OnInit {
   ngOnInit() {
     this.nuevoJuego.elegirPalabra();
     this.desarmarPalabra();
+    
   }
   
   repetidor: any = setInterval(()=>{       
@@ -51,6 +59,7 @@ export class AnagramaComponent implements OnInit {
       this.desarmarPalabra();
       this.perdedor=true;
       this.ganador=true;
+      
       }
   
     Ingresar(resp:string){
@@ -58,5 +67,16 @@ export class AnagramaComponent implements OnInit {
     this.ganador=!this.nuevoJuego.verificar();
     this.perdedor=!this.ganador;
     this.verTiempo=true;
+
+    if( (typeof this.jugadorR !== 'undefined') &&  (this.jugadorR!== null))
+    {
+      this.nuevoJuego.gano= this.nuevoJuego.verificar();
+      this.nuevoJuego.jugador=this.jugadorR.email;
+    }else
+    {
+      this.nuevoJuego.gano= this.nuevoJuego.verificar();
+    }
+
+    this.servicio.guardarJuego(this.nuevoJuego);
   }
 }

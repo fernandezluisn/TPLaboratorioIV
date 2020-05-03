@@ -1,5 +1,8 @@
 import { Component, OnInit ,Input,Output,EventEmitter} from '@angular/core';
 import { JuegoPiedraPapelTijera } from '../../clases/juego-piedra-papel-tijera'
+import { ServiceService } from '../../service.service';
+import { Jugador } from '../../clases/jugador';
+
 
 @Component({
   selector: 'app-ppt',
@@ -15,10 +18,14 @@ export class PPTComponent implements OnInit {
   resultado:string;
   ganar: boolean;
 
-  
+  servicio:ServiceService;
+  jugadorR:Jugador;
 
   constructor() { 
     this.nuevoJuego= new JuegoPiedraPapelTijera();
+
+    this.servicio=new ServiceService();
+    this.jugadorR=this.servicio.traerLogeado();
   }
 
   ngOnInit(): void {
@@ -43,10 +50,28 @@ export class PPTComponent implements OnInit {
 
     if(this.nuevoJuego.verificar()){
       this.resultado="Ganaste!!!";
+      this.nuevoJuego.gano=true;
     }else if (this.nuevoJuego.elegidoUsuario==this.nuevoJuego.elegidoMaquina)
     this.resultado="Empataste!!";
     else
-    this.resultado="Perdiste!!";
+    {
+      this.resultado="Perdiste!!";
+      this.nuevoJuego.gano=false;
+    }
+    
+
+    if( (typeof this.jugadorR !== 'undefined') &&  (this.jugadorR!== null))
+    {
+      this.nuevoJuego.gano= this.nuevoJuego.verificar();
+      this.nuevoJuego.jugador=this.jugadorR.email;
+    }else
+    {
+      this.nuevoJuego.gano= this.nuevoJuego.verificar();
+    }
+
+    this.servicio.guardarJuego(this.nuevoJuego);
   }
+
+  
 
 }

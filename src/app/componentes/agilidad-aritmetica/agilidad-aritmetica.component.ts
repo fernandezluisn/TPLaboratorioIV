@@ -3,6 +3,8 @@ import { JuegoAgilidad } from '../../clases/juego-agilidad'
 
 import {Subscription} from "rxjs";
 import {TimerObservable} from "rxjs/observable/TimerObservable";
+import { ServiceService } from '../../service.service';
+import { Jugador } from '../../clases/jugador';
 @Component({
   selector: 'app-agilidad-aritmetica',
   templateUrl: './agilidad-aritmetica.component.html',
@@ -17,7 +19,8 @@ export class AgilidadAritmeticaComponent implements OnInit {
   repetidor:any;
   perdio:boolean;
 
-  
+  servicio:ServiceService;
+  jugadorR:Jugador;
 
   private subscription: Subscription;
   ngOnInit() {
@@ -29,6 +32,9 @@ export class AgilidadAritmeticaComponent implements OnInit {
      this.Tiempo=10; 
     this.nuevoJuego = new JuegoAgilidad();
     console.info("Inicio agilidad");  
+    
+    this.servicio=new ServiceService();
+    this.jugadorR=this.servicio.traerLogeado();
   }
   NuevoJuego() {
     this.ocultarVerificar=false;
@@ -73,6 +79,17 @@ export class AgilidadAritmeticaComponent implements OnInit {
     clearInterval(this.repetidor);
     this.nuevoJuego.gano=this.nuevoJuego.verificar();
     this.perdio=!(this.nuevoJuego.verificar());
+
+    if( (typeof this.jugadorR !== 'undefined') &&  (this.jugadorR!== null))
+    {
+      this.nuevoJuego.gano= this.nuevoJuego.verificar();
+      this.nuevoJuego.jugador=this.jugadorR.email;
+    }else
+    {
+      this.nuevoJuego.gano= this.nuevoJuego.verificar();
+    }
+
+    this.servicio.guardarJuego(this.nuevoJuego);
   }  
 
 }

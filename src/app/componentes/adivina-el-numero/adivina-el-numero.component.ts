@@ -67,6 +67,8 @@ export class AdivinaElNumeroComponent implements OnInit {
 
     }
     console.info("numero Secreto:",this.nuevoJuego.gano);  
+
+    
   }  
 
   MostarMensaje(mensaje:string="este es el mensaje",ganador:boolean=false) {
