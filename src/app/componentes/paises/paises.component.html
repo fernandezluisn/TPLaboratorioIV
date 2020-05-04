@@ -1,12 +1,6 @@
-<div [hidden]="resultado" class="resultado">
-    <h1 style="margin-top: 23rem;" [hidden]="ganarB">Ganaste!!</h1>
-    <h1 style="margin-top: 23rem;" [hidden]="perder">Perdiste!!</h1>
-    <h2 [hidden]="perder" style="margin-top: 2rem;">La respuesta era {{this.nuevoJuego.paisS.nombre}} </h2>
-    <button (click)="nuevo()" class="a" style="width: 15%; margin-right: 42.5%; margin-left: 42.5%; height: 6rem;">Nuevo Juego</button>
-    
-</div>
 
-<div class="container">
+
+<div class="container" [hidden]="!resultado">
     <div  class="card">
         <img class="img-thumbnail"   src="{{this.nuevoJuego.paisS.foto}}" alt="Avatar" style="width:100%">
     </div>
@@ -17,5 +11,15 @@
     <button (click)="ganar(string2)" class="b">{{string2}}</button>
     <button (click)="ganar(string3)" class="c">{{string3}}</button>
     <button (click)="ganar(string4)" class="d">{{string4}}</button>
+
+    
+</div>
+
+<div [hidden]="resultado" style="height: 40rem; justify-content: center; text-align: center;">
+    <h1 style="margin-top: 13rem;" [hidden]="ganarB">Ganaste!!</h1>
+    <h1 style="margin-top: 13rem;" [hidden]="perder">Perdiste!!</h1>
+    <h2 [hidden]="perder" style="margin-top: 2rem;">La respuesta era {{this.nuevoJuego.paisS.nombre}} </h2>
+    <button (click)="nuevo()" class="a" style="width: 15%; margin-right: 42.5%; margin-left: 42.5%; height: 6rem;">Nuevo Juego</button>
+    
 </div>
 

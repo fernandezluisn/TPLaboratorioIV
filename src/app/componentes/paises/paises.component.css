@@ -79,13 +79,3 @@ button{
   }
  
 
-  .resultado{
-    position: fixed;
-    height: 52rem;
-    width:100%;
-    opacity:95%;
-    background-color: black;
-    justify-content: center;
-    color: red;
-    text-align: center;
-  }
